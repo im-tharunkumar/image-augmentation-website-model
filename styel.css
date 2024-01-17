@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #E3F2FD;
+}
+
+.container{
+    width: 1300px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 35px 35px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.container.disable :where(.editor-panel, .reset-filter, .save-img, .previous-img, .next-img) {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.container h2{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.container .wrapper{
+    display: flex;
+    margin: 20px 0;
+    min-height: 335px;
+}
+
+.wrapper .editor-panel{
+    width: 500px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    
+}
+
+.editor-panel .title{
+    display: block;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.editor-panel .options, .controls{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.editor-panel .filter button{
+    height: 40px;
+    font-size: 14px;
+    color: #6C757D;
+    width: calc(100%/ 4 - 20px);
+    margin-bottom: 8px;
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid #aaa;
+    
+}
+
+.filter button.active{
+    color: #fff;
+    background-color: #5372F0;
+    border-color: #5372F0;
+}
+
+.editor-panel button:hover{
+    background-color: #5372F0;
+}
+
+.filter .options{
+    height: 20vh;
+}
+
+.filter .parameter {
+    height: 30vh;
+    margin-top: 5px;
+    background-color: #fff;
+    display: block;
+    overflow-y:auto; /* Add a vertical scrollbar when content overflows */
+    padding: 10px; /* Add padding to create a fixed-size margin */
+    box-sizing: border-box;
+    border-radius: 5px; 
+    justify-content: center;
+    justify-items: center;/* Include padding in the width */
+}
+
+.filter .parameter .filter-info{
+    display:flex;
+    color: #464646;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+.editor-panel .paramter input{
+    width: 100%;
+    height: 100%;
+    accent-color: #5372f0;
+}
+
+.preview-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+
+.preview-img img{
+    max-height: 390px;
+    max-height: 235px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.preview-img p{
+    text-align: center;
+    height: 50px;
+}
+
+.edited-image{
+    width: auto;
+    height:max-content;
+    align-items: center;
+    justify-content: center;
+    transform-origin: center center;
+    margin-left: 50px;
+
+}
+
+.controls button{
+    padding:  11px 20px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    background: #fff;
+    text-transform: uppercase;
+
+}
+
+.controls .reset-filter{
+    color: #6C757D;
+    border: 1px solid #6C757D;
+}
+.controls .next-img{
+    color: #6C757D;
+    border: 1px solid #6C757D;
+}
+.controls .previous-img{
+    color: #6C757D;
+    border: 1px solid #6C757D;
+}
+.controls .choose-img{
+    background: #6C757D;
+    border: 1px solid #6C757D;
+}
+
+.controls .save-img{
+    margin-left: 5px;
+    background: #5372F0;
+    border: 1px solid #5372F0;
+}

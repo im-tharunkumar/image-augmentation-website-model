@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Augmentation</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="../cropperjs/node_modules/cropperjs/dist/cropper.min.css">
+    <link rel="stylesheet" href="./styel.css">
+</head>
+
+<body>
+    <div class="container disable">
+        <h2> Image Augmentation</h2>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <div class="filter">
+                    <label class="title">Transformations</label>
+                    <div class="options">
+                        <button id="blur" class="active">Blur</button>
+                        <button id="cutouts">Cutouts</button>
+                        <button id="transpose">90 degree</button>
+                        <button id="exposure">Exposure</button>
+                        <button id="flip">Horizontal Flip</button>
+                        <button id="shear">Shear</button>
+                        <button id="noise">noise</button>
+                        <button id="crop">Crop</button>
+                        <button id="rotate">Rotate</button>
+                    </div>
+                    <div class="parameter">
+                        <label >Parameters</label>
+                        <p class="parameter-for"> </p>
+                        <p class="no-param" hidden>No parameter for this operation</p>
+                        <div class="inputs">
+                            <button id="cropparambtn" hidden>Crop</button>
+                            <p id="param1name" hidden></p> 
+                            <p id="silder1" hidden></p>
+                            <input type="range" id="blurrange" value="0" max="7" step="0.5" oninput="silder1.innerText=blurrange.value" hidden>
+                            <input type="range" id="rotaterange" value="0" min="-50" max="50" step="1" oninput="silder1.innerText=rotaterange.value" hidden>
+                            <input type="range" id="shearrange" value="0" min="0" max="15" step="1" oninput="silder1.innerText=shearrange.value" hidden>
+                            <input type="range" class="exposure-param" id="brightnessrange" value="100" min="0" max="200" step="1" oninput="silder1.innerText=brightnessrange.value" hidden>
+                            <input type="range" class="noise-param" id="varlimitrange" min="0" max="2000" value="0" step="50" oninput="silder1.innerText=varlimitrange.value" hidden>
+                            <input type="range" class="cutout-param" id="boxwidthrange" min="0" max="50" value="0" step="1" oninput="silder1.innerText=boxwidthrange.value" hidden>
+                            <p id="param2name" hidden></p>
+                            <p id="silder2" hidden></p>
+                            <input type="range" class="exposure-param" id="contrastrange" value="100" min="0" max="200" step="1" oninput="silder2.innerText=contrastrange.value" hidden>
+                            <input type="range" class="noise-param" id="meanrange" min="-100" max="100" value="0" step="1" oninput="silder2.innerText=meanrange.value" hidden>
+                            <input type="range" class="cutout-param" id="boxheightrange" min="0" max="50" value="0" step="1" oninput="silder2.innerText=boxheightrange.value" hidden>
+                            <p id="param3name" hidden></p>
+                            <p id="silder3" hidden></p>
+                            <input type="range" class="cutout-param" id="boxcountrange" min="0" max="10" value="0" step="1" oninput="silder3.innerText=boxcountrange.value" hidden>
+                            <button id="cropbtn" hidden>crop</button>  
+                            <!-- <button id="90degbtn" hidden>rotate</button>   -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-img">
+                <!-- <p>Original Image</p> -->
+                <div class="original-image" >
+                    <p>Original Image</p>
+                    <img class="original-img" src="image-placeholder.svg" alt="preview-img">
+                </div>
+                <!-- <p>Augmented Image</p> -->
+                <div class="edited-image"  >
+                    <p>Augmented Image</p>
+                    <img class="augmentation-img" src="image-placeholder.svg" alt="edited-img">
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="reset-filter">Reset Filter</button>
+            <div class="row">
+                <input type="file" class="file-input" accept="image/*" multiple hidden>
+                <button class="previous-img">previous Image</button> 
+                <button class="next-img">next Image</button>
+                <button class="choose-img">Choose Image</button> 
+                <button class="save-img">Save Image</button> 
+            </div>
+        </div>
+    </div>
+    <script src="../cropperjs/node_modules/cropperjs/dist/cropper.min.js"></script>
+    <script src="./parameter.js"></script>
+    <script src="./button.js"></script>
+    <script src="./transform.js"></script>
+    <script src="./functions.js"></script>
+    
+</body>
+</html>
